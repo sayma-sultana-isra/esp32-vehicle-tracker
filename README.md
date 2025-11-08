@@ -2,14 +2,17 @@
 
 A comprehensive collision detection system using ESP32-S3 microcontroller with MPU6050 accelerometer, buzzer alerts, and Telegram notifications.
 
-## 🚗 System Overview
+ **Live Demo:** [ESP32 Vehicle Tracker](https://esp32-vehicle-tracker.onrender.com/)
+
+
+## System Overview
 
 This system continuously monitors vehicle acceleration and detects potential collisions. When a collision is detected (acceleration > 1.5g), it:
-- 🔊 Sounds an emergency buzzer pattern
-- 📱 Sends detailed Telegram notification with location
-- 📊 Logs collision data with acceleration values
+-  Sounds an emergency buzzer pattern
+-  Sends detailed Telegram notification with location
+-  Logs collision data with acceleration values
 
-## 🔧 Hardware Components
+##  Hardware Components
 
 | Component | Model | Purpose |
 |-----------|-------|---------|
@@ -19,7 +22,7 @@ This system continuously monitors vehicle acceleration and detects potential col
 | Breadboard | Half-size | Component mounting |
 | Jumper Wires | M-M, M-F | Connections |
 
-## 📐 Wiring Diagram
+##  Wiring Diagram
 
 ### ESP32-S3 Pin Connections
 
@@ -63,7 +66,7 @@ GND              ←→    Negative (-)
             └───────┘
 ```
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -113,7 +116,7 @@ GND              ←→    Negative (-)
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 🔄 Data Flow Diagram
+## Data Flow Diagram
 
 ```
 ┌─────────────┐    ┌──────────────┐    ┌─────────────────┐
@@ -141,7 +144,7 @@ GND              ←→    Negative (-)
                    └─────────────┘    └─────────────────┘  └─────────────────┘
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 Edit the `Config` class in `main.py`:
 
@@ -164,7 +167,7 @@ class Config:
     BUZZER_PIN = 10  # PWM Buzzer
 ```
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### 1. Hardware Assembly
 1. Connect MPU6050 to ESP32-S3 using I2C (pins 8 & 9)
@@ -192,7 +195,7 @@ mpremote connect /dev/cu.usbserial-10 fs cp main.py :/main.py
 mpremote connect /dev/cu.usbserial-10 run main.py
 ```
 
-## 📊 System Operation
+##  System Operation
 
 ### Normal Operation
 ```
@@ -212,17 +215,17 @@ Live Accel: X=0.44, Y=0.52, Z=-0.79, Total=1.04
 ```
 Live Accel: X=2.50, Y=1.80, Z=0.95, Total=3.20
 
-🚨 COLLISION DETECTED!
+COLLISION DETECTED!
 
-🚗 Vehicle: V123
-📍 Location: https://www.google.com/maps?q=23.798258,90.449808
-🕒 Time: Current time
+ Vehicle: V123
+ Location: https://www.google.com/maps?q=23.798258,90.449808
+ Time: Current time
 
 Sending Telegram notification...
 Telegram notification sent successfully!
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -253,7 +256,7 @@ print(f"Raw acceleration: {ax}, {ay}, {az}")
 print(f"WiFi status: {self.wifi_manager.is_connected()}")
 ```
 
-## 📱 Telegram Notification Format
+##  Telegram Notification Format
 
 When collision detected, you'll receive:
 ```
@@ -264,7 +267,7 @@ Location: https://www.google.com/maps?q=23.798257,90.449808
 Acceleration: X=2.50g, Y=1.80g, Z=-0.95g
 ```
 
-## 🔋 Power Consumption
+##  Power Consumption
 
 | Component | Current Draw | Notes |
 |-----------|--------------|-------|
@@ -273,7 +276,7 @@ Acceleration: X=2.50g, Y=1.80g, Z=-0.95g
 | Buzzer | ~30mA | When active |
 | **Total** | **~114mA** | During collision alert |
 
-## 📈 Performance Metrics
+##  Performance Metrics
 
 - **Sensor Reading Rate**: 10Hz (100ms interval)
 - **Collision Detection Latency**: <200ms
@@ -281,7 +284,7 @@ Acceleration: X=2.50g, Y=1.80g, Z=-0.95g
 - **Buzzer Response Time**: <100ms
 - **WiFi Reconnection Time**: 5-10 seconds
 
-## 🛡️ Safety Features
+## Safety Features
 
 - **Graceful Degradation**: Works without WiFi
 - **Error Recovery**: Automatic WiFi reconnection
@@ -289,11 +292,11 @@ Acceleration: X=2.50g, Y=1.80g, Z=-0.95g
 - **Threshold Protection**: Prevents false positives
 - **Status Monitoring**: Real-time system health
 
-## 📄 License
+## License
 
 This project is open source. Feel free to modify and distribute.
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create feature branch
@@ -301,7 +304,7 @@ This project is open source. Feel free to modify and distribute.
 4. Push to the branch
 5. Create Pull Request
 
-## 📞 Support
+##  Support
 
 For issues and questions:
 - Check troubleshooting section
@@ -310,4 +313,4 @@ For issues and questions:
 - Test individual components
 
 ---
-**Made with ❤️ for vehicle safety**
+**Built to Support Safer Driving and Vehicle Protection**
